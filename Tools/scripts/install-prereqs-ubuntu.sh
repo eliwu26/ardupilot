@@ -36,7 +36,6 @@ function maybe_prompt_user() {
     fi
 }
 
-
 OPTIND=1  # Reset in case getopts has been used previously in the shell.
 while getopts "y" opt; do
     case "$opt" in
@@ -72,7 +71,7 @@ fi
 
 exportline="export PATH=$OPT/$ARM_ROOT/bin:\$PATH";
 if ! grep -Fxq "$exportline" ~/.profile ; then
-    if maybe_prompt_user "Add $OPT/$ARM_ROOT/bin to your PATH [Y/n]?" ; then
+    if true; then
         echo $exportline >> ~/.profile
         $exportline
     else
@@ -82,7 +81,7 @@ fi
 
 exportline2="export PATH=$CWD/$ARDUPILOT_TOOLS:\$PATH";
 if ! grep -Fxq "$exportline2" ~/.profile ; then
-    if maybe_prompt_user "Add $CWD/$ARDUPILOT_TOOLS to your PATH [Y/n]?" ; then
+    if true ; then
         echo $exportline2 >> ~/.profile
         $exportline2
     else

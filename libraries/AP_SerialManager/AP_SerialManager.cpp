@@ -151,6 +151,7 @@ void AP_SerialManager::init()
                 case SerialProtocol_GPS2:
                     state[i].uart->begin(map_baudrate(state[i].baud), 
                                          AP_SERIALMANAGER_GPS_BUFSIZE_RX,
+                                        // 1024,
                                          AP_SERIALMANAGER_GPS_BUFSIZE_TX);
                     break;
                 case SerialProtocol_AlexMos:

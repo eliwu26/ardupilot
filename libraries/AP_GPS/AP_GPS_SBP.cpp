@@ -60,7 +60,7 @@ AP_GPS_SBP::AP_GPS_SBP(AP_GPS &_gps, AP_GPS::GPS_State &_state,
     last_full_update_cpu_ms(0),
     crc_error_counter(0)
 {
-
+    // port->begin(115200, 1024, 4);
     Debug("SBP Driver Initialized");
 
     parser_state.state = sbp_parser_state_t::WAITING;
